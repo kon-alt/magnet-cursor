@@ -1,0 +1,18 @@
+@import "src/styles/mixins";
+
+.circle-big {
+  position: absolute;
+  right: 10%;
+  top: 20%;
+}
+
+.circle-big-corners {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  @include corners
+}

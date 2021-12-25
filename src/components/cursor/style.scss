@@ -1,0 +1,84 @@
+@import "src/styles/mixins";
+
+.cursor {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  @include corners;
+
+  &:before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border: 1px solid #838282;
+    display: inline-block;
+    transform: rotate(45deg);
+  }
+
+  svg {
+    stroke: #838282;
+  }
+}
+
+.cursor-0 {
+  &--hover {
+    animation: wowEffect1 0.7s ease-out 0.5s;
+  }
+}
+
+.cursor-1 {
+
+  &--hover {
+    animation: wowEffect1 0.7s ease-out 0.7s;
+  }
+}
+
+.cursor-2 {
+
+  &--hover {
+    animation: wowEffect1 0.7s ease-out 0.9s;
+  }
+}
+
+.cursor-3 {
+  opacity: 0;
+
+  &--hover {
+    animation: wowEffect2 0.7s ease-out 0s 2;
+  }
+}
+
+@keyframes wowEffect1 {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+
+    svg {
+      stroke: red;
+    }
+  }
+}
+
+@keyframes wowEffect2 {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
